@@ -79,7 +79,7 @@
     scrollbar-width: none;
   }
   nav::-webkit-scrollbar { display: none; }
-  nav button {
+  .nav-btn {
     background: none;
     border: none;
     color: rgba(245,232,200,0.65);
@@ -91,17 +91,18 @@
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
   }
-  nav button.active {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
-  nav button:hover { color: var(--gold-light); }
+  .nav-btn:hover { color: var(--gold-light); }
+  .nav-btn:target, .nav-btn.active-link { color: var(--gold); border-bottom-color: var(--gold); }
 
   main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
   .section { display: none; }
-  .section.active { display: block; }
+  .section:target { display: block; }
+  #grammatik { display: block; }
+  .section:target ~ #grammatik { display: none; }
 
   .level-badge {
     display: inline-flex;
@@ -420,15 +421,15 @@
 </header>
 
 <nav id="main-nav">
-  <button class="active" onclick="showSection('grammatik')">🔤 Gramática</button>
-  <button onclick="showSection('vokabeln')">📚 Vocabulario</button>
-  <button onclick="showSection('stufe1')">⭐ Nivel 1 – Ejercicios</button>
-  <button onclick="showSection('stufe2')">⭐⭐ Nivel 2 – Ejercicios</button>
-  <button onclick="showSection('kannliste')">✅ Kann-Liste</button>
-  <button onclick="showSection('mediacion')">🌎 Mediación: México</button>
-  <button onclick="showSection('guatemala')">🗺️ Mediación: Guatemala</button>
-  <button onclick="showSection('online')">🌐 Ejercicios online</button>
-  <button onclick="showSection('dialogo')" style="background:rgba(200,151,58,0.18); color:#F5E8C8; border-bottom:2px solid #C8973A;">🎙️ Tarea oral</button>
+  <a class="nav-btn active-link" href="#grammatik">🔤 Gramática</a>
+  <a class="nav-btn" href="#vokabeln">📚 Vocabulario</a>
+  <a class="nav-btn" href="#stufe1">⭐ Nivel 1</a>
+  <a class="nav-btn" href="#stufe2">⭐⭐ Nivel 2</a>
+  <a class="nav-btn" href="#kannliste">✅ Kann-Liste</a>
+  <a class="nav-btn" href="#mediacion">🌎 México</a>
+  <a class="nav-btn" href="#guatemala">🗺️ Guatemala</a>
+  <a class="nav-btn" href="#online">🌐 Online</a>
+  <a class="nav-btn" href="#dialogo" style="background:rgba(200,151,58,0.18); color:#F5E8C8; border-bottom:2px solid #C8973A;">🎙️ Tarea oral</a>
 </nav>
 
 <div style="background: linear-gradient(90deg, #1A1610 60%, #3A2E1A); border-bottom: 3px solid #C8973A; padding: 0.7rem 2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
@@ -1212,15 +1213,6 @@
 
 <script>
 let s1Correct = 0, s1Total = 0;
-
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  const btns = document.querySelectorAll('nav button');
-  const ids = ['grammatik','vokabeln','stufe1','stufe2','kannliste','mediacion','guatemala','online','dialogo'];
-  btns[ids.indexOf(id)].classList.add('active');
-}
 
 function toggleSolution() {
   const sol = document.getElementById('solution-text');
