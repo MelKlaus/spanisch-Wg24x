@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanisch – Wiederholung: Un viaje por Perú</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8973A;
+    --gold-light: #F5E8C8;
+    --gold-dark: #8B6520;
+    --ink: #1A1610;
+    --ink-mid: #4A3F2F;
+    --ink-soft: #7A6E5E;
+    --cream: #FAF7F0;
+    --cream-dark: #F0EBE0;
+    --teal: #1D6B6B;
+    --teal-light: #E0F0EF;
+    --red: #A33030;
+    --red-light: #F7E8E8;
+    --green: #2D6A2D;
+    --green-light: #E8F3E8;
+    --blue: #1A4A7A;
+    --blue-light: #E6EEF8;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(26,22,16,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--gold-light);
+    padding: 2rem 2.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid rgba(200,151,58,0.12);
+  }
+  header .tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    color: #fff;
+  }
+  header p {
+    margin-top: 0.5rem;
+    color: rgba(245,232,200,0.75);
+    font-size: 0.95rem;
+  }
+
+  nav {
+    background: var(--ink-mid);
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav button {
+    background: none;
+    border: none;
+    color: rgba(245,232,200,0.65);
+    padding: 0.85rem 1.25rem;
+    font-size: 0.85rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav button.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  nav button:hover { color: var(--gold-light); }
+
+  main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .level1 { background: var(--teal-light); color: var(--teal); }
+  .level2 { background: var(--gold-light); color: var(--gold-dark); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  /* Grammar explanation boxes */
+  .grammar-box {
+    background: var(--blue-light);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .grammar-box h3 { color: var(--blue); }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+  }
+  .rule-table th {
+    background: var(--ink);
+    color: var(--gold-light);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  .rule-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--cream-dark);
+    vertical-align: top;
+  }
+  .rule-table tr:last-child td { border-bottom: none; }
+  .rule-table tr:nth-child(even) td { background: var(--cream); }
+  .es { color: var(--teal); font-weight: 600; }
+  .de { color: var(--ink-soft); font-size: 0.85rem; }
+
+  /* Quiz elements */
+  .quiz-item {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .quiz-item .question {
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt-btn {
+    background: var(--cream-dark);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    color: var(--ink);
+  }
+  .opt-btn:hover { background: var(--cream); border-color: var(--gold); }
+  .opt-btn.correct { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 600; }
+  .opt-btn.wrong { background: var(--red-light); border-color: var(--red); color: var(--red); }
+  .opt-btn.disabled { cursor: not-allowed; opacity: 0.7; }
+
+  .feedback {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback.ok { background: var(--green-light); color: var(--green); }
+  .feedback.fail { background: var(--red-light); color: var(--red); }
+
+  /* Fill-in input */
+  .fill-input {
+    border: 2px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--cream);
+    width: 100%;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .fill-input:focus { border-color: var(--gold); background: #fff; }
+  .fill-input.correct-input { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .fill-input.wrong-input { border-color: var(--red); background: var(--red-light); }
+
+  .check-btn {
+    background: var(--ink);
+    color: var(--gold-light);
+    border: none;
+    border-radius: 8px;
+    padding: 9px 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.18s;
+  }
+  .check-btn:hover { background: var(--gold-dark); }
+
+  /* Matching */
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.75rem;
+  }
+  .match-item {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid var(--cream-dark);
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    background: #fff;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+  }
+  .match-item:hover { border-color: var(--gold); background: var(--gold-light); }
+  .match-item.selected { background: var(--gold-light); border-color: var(--gold); }
+  .match-item.matched { background: var(--green-light); border-color: var(--green); color: var(--green); cursor: default; }
+  .match-item.wrong-match { background: var(--red-light); border-color: var(--red); }
+
+  /* Score bar */
+  .score-bar {
+    background: var(--ink);
+    color: var(--gold-light);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .score-bar span { font-size: 0.9rem; opacity: 0.8; }
+  .score-bar strong { font-size: 1.1rem; color: var(--gold); }
+
+  /* Online links */
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 2px solid var(--cream-dark);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    transition: all 0.18s;
+  }
+  .link-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .link-icon {
+    width: 40px; height: 40px;
+    background: var(--gold-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .link-card .link-title { font-weight: 600; font-size: 0.9rem; }
+  .link-card .link-desc { font-size: 0.82rem; color: var(--ink-soft); margin-top: 2px; }
+
+  /* Tip box */
+  .tip {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--gold-dark);
+  }
+  .tip strong { color: var(--ink); }
+
+  /* Example sentences */
+  .example-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0.5rem 0;
+  }
+  .es-ex {
+    background: var(--teal-light);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .de-ex {
+    background: var(--cream-dark);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 2px dashed var(--cream-dark);
+    margin: 1.5rem 0;
+  }
+
+  .progress-wrap { margin-bottom: 1.5rem; }
+  .progress-label { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 4px; }
+  .progress-track {
+    width: 100%;
+    height: 6px;
+    background: var(--cream-dark);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  .word-chip {
+    display: inline-block;
+    background: var(--cream-dark);
+    border: 1px solid var(--cream-dark);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    margin: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .word-chip:hover { background: var(--gold-light); border-color: var(--gold); }
+  .word-chip.used { opacity: 0.35; cursor: default; text-decoration: line-through; }
+
+  @media(max-width: 600px) {
+    .match-grid { grid-template-columns: 1fr; }
+    .example-pair { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">WG 241 · Klausur Nr. 2 · 12.06.2026</div>
+  <h1>Un viaje por Perú</h1>
+  <p>Interaktives Wiederholungsmaterial · Spanisch · Berufskolleg</p>
+</header>
+
+<nav id="main-nav">
+  <button class="active" onclick="showSection('grammatik')">🔤 Gramática</button>
+  <button onclick="showSection('vokabeln')">📚 Vocabulario</button>
+  <button onclick="showSection('stufe1')">⭐ Nivel 1 – Ejercicios</button>
+  <button onclick="showSection('stufe2')">⭐⭐ Nivel 2 – Ejercicios</button>
+  <button onclick="showSection('kannliste')">✅ Kann-Liste</button>
+  <button onclick="showSection('mediacion')">🌎 Mediación: México</button>
+  <button onclick="showSection('guatemala')">🗺️ Mediación: Guatemala</button>
+  <button onclick="showSection('online')">🌐 Ejercicios online</button>
+  <button onclick="showSection('dialogo')" style="background:rgba(200,151,58,0.18); color:#F5E8C8; border-bottom:2px solid #C8973A;">🎙️ Tarea oral</button>
+</nav>
+
+<div style="background: linear-gradient(90deg, #1A1610 60%, #3A2E1A); border-bottom: 3px solid #C8973A; padding: 0.7rem 2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+  <span style="font-size:1.3rem;">🎙️</span>
+  <p style="color:#F5E8C8; font-size:0.85rem; margin:0; line-height:1.5;">
+    <strong style="color:#C8973A;">Tarea oral obligatoria:</strong>
+    Debes realizar un diálogo en español y subir la grabación de audio a <strong style="color:#C8973A;">OneNote</strong>.
+    <span style="opacity:0.75;"> → Haz clic en «🎙️ Tarea oral» para ver todos los detalles.</span>
+  </p>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════ GRAMMATIK -->
+<section class="section active" id="grammatik">
+
+  <div class="level-badge level1">📖 Explicaciones gramaticales</div>
+  <h2>Gramática: Indefinido &amp; Conjunciones</h2>
+  <p class="subtitle">Todo lo que necesitas saber para el examen – con ejemplos de Perú</p>
+
+  <!-- INDEFINIDO -->
+  <div class="grammar-box">
+    <h3>🕐 El Pretérito Indefinido</h3>
+    <p style="margin-top:0.5rem; color:var(--ink-mid); font-size:0.9rem;">El indefinido describe <strong>acciones terminadas en el pasado</strong> – cosas que ocurrieron en un momento concreto.</p>
+  </div>
+
+  <div class="card">
+    <h3>Verbos regulares</h3>
+    <table class="rule-table">
+      <thead><tr><th>Pronomen</th><th>-AR (hablar)</th><th>-ER (comer)</th><th>-IR (vivir)</th></tr></thead>
+      <tbody>
+        <tr><td>yo</td><td class="es">hablé</td><td class="es">comí</td><td class="es">viví</td></tr>
+        <tr><td>tú</td><td class="es">hablaste</td><td class="es">comiste</td><td class="es">viviste</td></tr>
+        <tr><td>él/ella</td><td class="es">habló</td><td class="es">comió</td><td class="es">vivió</td></tr>
+        <tr><td>nosotros</td><td class="es">hablamos</td><td class="es">comimos</td><td class="es">vivimos</td></tr>
+        <tr><td>vosotros</td><td class="es">hablasteis</td><td class="es">comisteis</td><td class="es">vivisteis</td></tr>
+        <tr><td>ellos/ellas</td><td class="es">hablaron</td><td class="es">comieron</td><td class="es">vivieron</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:1rem;"><strong>⚠️ Atención:</strong> La 1.ª persona del plural (nosotros) en -AR e -IR es idéntica al presente. El contexto aclara el tiempo: <em>El domingo estudiamos</em> = pasado.</div>
+  </div>
+
+  <div class="card">
+    <h3>Verbos irregulares – los más importantes</h3>
+    <table class="rule-table">
+      <thead><tr><th>Infinitiv</th><th>yo</th><th>tú</th><th>él/ella</th><th>nosotros</th><th>ellos</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ser / ir</strong></td><td class="es">fui</td><td class="es">fuiste</td><td class="es">fue</td><td class="es">fuimos</td><td class="es">fueron</td></tr>
+        <tr><td><strong>tener</strong></td><td class="es">tuve</td><td class="es">tuviste</td><td class="es">tuvo</td><td class="es">tuvimos</td><td class="es">tuvieron</td></tr>
+        <tr><td><strong>hacer</strong></td><td class="es">hice</td><td class="es">hiciste</td><td class="es">hizo</td><td class="es">hicimos</td><td class="es">hicieron</td></tr>
+        <tr><td><strong>ver</strong></td><td class="es">vi</td><td class="es">viste</td><td class="es">vio</td><td class="es">vimos</td><td class="es">vieron</td></tr>
+        <tr><td><strong>estar</strong></td><td class="es">estuve</td><td class="es">estuviste</td><td class="es">estuvo</td><td class="es">estuvimos</td><td class="es">estuvieron</td></tr>
+        <tr><td><strong>poder</strong></td><td class="es">pude</td><td class="es">pudiste</td><td class="es">pudo</td><td class="es">pudimos</td><td class="es">pudieron</td></tr>
+        <tr><td><strong>escribir</strong></td><td class="es">escribí</td><td class="es">escribiste</td><td class="es">escribió</td><td class="es">escribimos</td><td class="es">escribieron</td></tr>
+        <tr><td><strong>nacer</strong></td><td class="es">nací</td><td class="es">naciste</td><td class="es">nació</td><td class="es">nacimos</td><td class="es">nacieron</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:1rem;"><strong>💡 Truco:</strong> <em>ser</em> e <em>ir</em> son idénticos en indefinido – el contexto aclara el significado: <span class="es">Fue a Perú</span> (ir) vs. <span class="es">Fue genial</span> (ser).</div>
+  </div>
+
+  <div class="card">
+    <h3>Verbos reflexivos y con cambio vocálico</h3>
+    <table class="rule-table">
+      <thead><tr><th>Typ</th><th>Beispiel</th><th>yo</th><th>él/ella</th><th>ellos</th></tr></thead>
+      <tbody>
+        <tr><td>reflexiv</td><td><strong>levantarse</strong></td><td class="es">me levanté</td><td class="es">se levantó</td><td class="es">se levantaron</td></tr>
+        <tr><td>reflexiv</td><td><strong>quedarse</strong></td><td class="es">me quedé</td><td class="es">se quedó</td><td class="es">se quedaron</td></tr>
+        <tr><td>o→u (3.Ps.)</td><td><strong>dormir</strong></td><td class="es">dormí</td><td class="es">durmió</td><td class="es">durmieron</td></tr>
+        <tr><td>o→u (3.Ps.)</td><td><strong>morir</strong></td><td class="es">morí</td><td class="es">murió</td><td class="es">murieron</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:1rem;"><strong>📌 Del examen:</strong> <em>me dormí enseguida</em> = me quedé dormida inmediatamente (dormirse o→ue)</div>
+  </div>
+
+  <div class="card">
+    <h3>Marcadores temporales del indefinido</h3>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top:0.5rem;">
+      <div class="es-ex">ayer</div><div class="de-ex">gestern</div>
+      <div class="es-ex">el viernes pasado</div><div class="de-ex">letzten Freitag</div>
+      <div class="es-ex">la semana pasada</div><div class="de-ex">letzte Woche</div>
+      <div class="es-ex">el año pasado</div><div class="de-ex">letztes Jahr</div>
+      <div class="es-ex">en 2010</div><div class="de-ex">im Jahr 2010</div>
+      <div class="es-ex">hace tres días</div><div class="de-ex">vor drei Tagen</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CUANDO / COMO / PORQUE -->
+  <div class="grammar-box" style="background: var(--teal-light); border-color: var(--teal);">
+    <h3 style="color: var(--teal);">🔗 Cuando, Como &amp; Porque – conjunciones causales y temporales</h3>
+    <p style="margin-top:0.5rem; color:var(--ink-mid); font-size:0.9rem;">Estas tres conjunciones se examinan directamente en el examen. ¡Las diferencias son fundamentales!</p>
+  </div>
+
+  <div class="card">
+    <h3>Resumen y diferencias</h3>
+    <table class="rule-table">
+      <thead><tr><th>Conjunción</th><th>Significado (DE)</th><th>Función</th><th>Posición</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="es">porque</span></td>
+          <td class="de">weil</td>
+          <td>Expresa la causa (causal)</td>
+          <td>Solo en el medio; la oración principal va primero</td>
+        </tr>
+        <tr>
+          <td><span class="es">como</span></td>
+          <td class="de">da / weil</td>
+          <td>Expresa la causa (causal) – la razón ya es conocida</td>
+          <td><strong>Siempre al inicio de la oración</strong></td>
+        </tr>
+        <tr>
+          <td><span class="es">cuando</span></td>
+          <td class="de">als / wenn</td>
+          <td>Indica el momento temporal</td>
+          <td>Al inicio o en el medio</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Ejemplos del examen</h3>
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.75rem;">Dos oraciones → unidas con la conjunción correcta:</p>
+
+    <div style="margin-bottom: 1rem;">
+      <p style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:4px;">📌 Causa (conocida → <em>como</em> al inicio) o (<em>porque</em> en el medio):</p>
+      <div class="example-pair">
+        <div class="es-ex">Como a Luciana le interesó el Lago Titicaca, hizo una exposición.</div>
+        <div class="de-ex">Da Luciana am Titicacasee interessiert war, machte sie eine Ausstellung.</div>
+      </div>
+      <div class="example-pair">
+        <div class="es-ex">Luciana hizo una exposición porque le interesó el Titicaca.</div>
+        <div class="de-ex">Luciana machte eine Ausstellung, weil sie am Titicaca interessiert war.</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+      <p style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:4px;">📌 Momento temporal → <em>cuando</em>:</p>
+      <div class="example-pair">
+        <div class="es-ex">Cuando Luciana vivió en una isla flotante, sacó las fotos.</div>
+        <div class="de-ex">Als Luciana auf einer Floßinsel lebte, machte sie die Fotos.</div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>🚦 Truco:</strong> ¿Se pueden unir con «als/wenn» (temporal)? → <em>cuando</em>. ¿Con «weil» (causal)? → <em>porque</em> (medio) o <em>como</em> (inicio). Si son posibles las dos conjunciones causales, ¡escribe las dos variantes!</div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ VOKABELN -->
+<section class="section" id="vokabeln">
+
+  <div class="level-badge level1">📚 Vocabulario</div>
+  <h2>Vocabulario: Perú</h2>
+  <p class="subtitle">Haz clic en una tarjeta para ver la traducción al alemán.</p>
+
+  <div id="vocab-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:10px;"></div>
+
+  <hr class="section-divider">
+
+  <h3 style="margin-bottom:0.75rem;">Números y cantidades</h3>
+  <p class="subtitle">Importantes para la comprensión auditiva</p>
+  <table class="rule-table" style="background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);">
+    <thead><tr><th>Español</th><th>Deutsch</th></tr></thead>
+    <tbody>
+      <tr><td class="es">la mitad</td><td>die Hälfte</td></tr>
+      <tr><td class="es">un tercio</td><td>ein Drittel</td></tr>
+      <tr><td class="es">miles de</td><td>Tausende von</td></tr>
+      <tr><td class="es">cientos de</td><td>Hunderte von</td></tr>
+      <tr><td class="es">más de</td><td>mehr als</td></tr>
+      <tr><td class="es">menos de</td><td>weniger als</td></tr>
+      <tr><td class="es">aproximadamente</td><td>ungefähr</td></tr>
+      <tr><td class="es">la superficie</td><td>die Fläche</td></tr>
+      <tr><td class="es">los kilómetros cuadrados</td><td>Quadratkilometer</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ STUFE 1 -->
+<section class="section" id="stufe1">
+
+  <div class="level-badge level1">⭐ Nivel 1 – Comprensión</div>
+  <h2>Ejercicios: Nivel 1</h2>
+  <p class="subtitle">Reconocimiento y comprensión – para empezar con seguridad</p>
+
+  <div class="score-bar">
+    <span>Tu progreso:</span>
+    <strong id="s1-score">0 / 0</strong>
+  </div>
+
+  <!-- QUIZ 1: Multiple Choice Indefinido -->
+  <div class="card">
+    <h3>1️⃣ Opción múltiple: formas del indefinido</h3>
+    <p class="subtitle">Elige la forma correcta del pretérito indefinido.</p>
+    <div id="mc-quiz"></div>
+  </div>
+
+  <!-- QUIZ 2: Richtig/Falsch Leseverstehen -->
+  <div class="card" style="margin-top:1.25rem;">
+    <h3>2️⃣ ¿Correcto o falso? – Comprensión lectora</h3>
+    <p class="subtitle">Sobre Perú y los uros (como en el examen)</p>
+    <div id="tf-quiz"></div>
+  </div>
+
+  <!-- QUIZ 3: Konjunktionen zuordnen -->
+  <div class="card" style="margin-top:1.25rem;">
+    <h3>3️⃣ Elige la conjunción: cuando / como / porque</h3>
+    <p class="subtitle">¿Cuál conjunción es correcta? Haz clic en la respuesta.</p>
+    <div id="konj-quiz"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ STUFE 2 -->
+<section class="section" id="stufe2">
+
+  <div class="level-badge level2">⭐⭐ Nivel 2 – Producción</div>
+  <h2>Ejercicios: Nivel 2</h2>
+  <p class="subtitle">Destrezas productivas y tareas más complejas</p>
+
+  <!-- FILL IN: Indefinido -->
+  <div class="card">
+    <h3>1️⃣ Texto con huecos: forma del indefinido</h3>
+    <p class="subtitle">Escribe la forma correcta del verbo en el hueco. El infinitivo está entre paréntesis.</p>
+    <div id="fill-quiz"></div>
+  </div>
+
+  <!-- MATCHING: Satzverbindung -->
+  <div class="card" style="margin-top:1.25rem;">
+    <h3>2️⃣ Une las frases – matching</h3>
+    <p class="subtitle">Conecta los fragmentos que forman una oración completa. Haz clic primero a la izquierda, luego a la derecha.</p>
+    <div id="match-quiz"></div>
+  </div>
+
+  <!-- Sprachmittlung Vorbereitung -->
+  <div class="card" style="margin-top:1.25rem;">
+    <h3>3️⃣ Mediación: vocabulario clave</h3>
+    <p class="subtitle">Traduce estas expresiones del alemán al español. Son las más importantes para la tarea de mediación.</p>
+    <div id="mittlung-quiz"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ MEDIACIÓN -->
+<section class="section" id="mediacion">
+
+  <div class="level-badge level2">🌎 Mediación – México</div>
+  <h2>Mediación: El Parque Nacional Sumidero</h2>
+  <p class="subtitle">Tarea similar a la del examen – ahora sobre México. Léela, resuélvela y comprueba con la solución.</p>
+
+  <div class="card" style="border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0;">
+    <h3>📋 Situación comunicativa</h3>
+    <p style="line-height:1.7; font-size:0.95rem; color:var(--ink-mid);">Estás de vacaciones en la Ciudad de México. En tu hotel se queda también una chica española, que quiere visitar el Cañón del Sumidero en Chiapas. La chica no tiene guía turística y te pide ayuda. Explícale la información que está en tu guía turística en alemán.</p>
+    <div class="tip" style="margin-top:1rem;"><strong>Tipp:</strong> Lies den deutschen Text, dann erkläre alles auf Spanisch – so wie es dein spanischer Reisegefährte verstehen kann. Benutze eigene Worte!</div>
+  </div>
+
+  <!-- DEUTSCHER AUSGANGSTEXT -->
+  <div class="card" style="margin-top:1rem;">
+    <h3>🇩🇪 Dein Reiseführer (auf Deutsch)</h3>
+    <div style="background: var(--cream-dark); border-radius:8px; padding:1.25rem; font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">
+
+      <p style="font-size:1.15rem; font-weight:700; text-decoration:underline; color:var(--ink); margin-bottom:1rem;">Nationalpark Cañón del Sumidero</p>
+
+      <p><strong><em>Lage:</em></strong> Der Cañón del Sumidero liegt im mexikanischen Bundesstaat Chiapas, etwa 15 Kilometer von der Hauptstadt Tuxtla Gutiérrez entfernt. Er gehört zu den beeindruckendsten Naturdenkmälern Mexikos und ist seit 1980 ein Nationalpark. Durch den Canyon fließt der Fluss Grijalva, der in einen großen Stausee mündet.</p>
+      <br>
+      <p><strong><em>Geografie:</em></strong> Die Felswände des Cañons erreichen an manchen Stellen eine Höhe von fast 1.000 Metern. Der Canyon ist ungefähr 35 Kilometer lang. Besonders beeindruckend ist die Vielfalt der Vegetation: Bäume wachsen direkt an den senkrechten Felswänden.</p>
+      <br>
+      <p><strong><em>Artenvielfalt:</em></strong> Im Park leben mehr als 400 verschiedene Tierarten, darunter Krokodile, Affen, Tukane und Schmetterlinge. Außerdem gibt es über 300 Pflanzenarten. Der Park ist ein wichtiger Lebensraum für viele bedrohte Tierarten.</p>
+      <br>
+      <p><strong><em>Angebote für Touristen:</em></strong> Die beliebteste Art, den Canyon zu erkunden, ist eine Bootstour auf dem Fluss Grijalva. Die Touren starten von Chiapa de Corzo und dauern ungefähr zwei Stunden. Es gibt auch Aussichtspunkte an den Felskanten, von denen man einen spektakulären Blick in den Canyon hat. Die Eintrittskarte kostet ungefähr 15 Euro. Außerdem kann man in der Nähe die koloniale Stadt San Cristóbal de las Casas besuchen, die nur eine Stunde entfernt ist.</p>
+      <br>
+      <p>Ein Besuch des Parks ist unbedingt empfehlenswert!</p>
+    </div>
+  </div>
+
+  <!-- AUFGABE -->
+  <div class="card" style="margin-top:1rem; border: 2px solid var(--teal);">
+    <h3 style="color:var(--teal);">✍️ Tu tarea</h3>
+    <p style="font-size:0.9rem; line-height:1.7; color:var(--ink-mid);">Explícale a la chica española la información del texto en alemán. Transmite la información de los siguientes apartados:</p>
+    <ul style="margin-top:0.75rem; padding-left:1.5rem; font-size:0.9rem; line-height:2; color:var(--ink);">
+      <li><strong>Ubicación</strong> – ¿Dónde está el parque? <em style="color:var(--ink-soft);">(4 puntos)</em></li>
+      <li><strong>Geografía</strong> – ¿Cómo es el cañón? <em style="color:var(--ink-soft);">(4 puntos)</em></li>
+      <li><strong>Fauna y flora</strong> – ¿Qué animales y plantas hay? <em style="color:var(--ink-soft);">(6 puntos)</em></li>
+      <li><strong>Oferta para turistas</strong> – ¿Qué se puede hacer? ¿Cuánto cuesta? <em style="color:var(--ink-soft);">(6 puntos)</em></li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--ink-soft);">Escribe tu texto en el cuaderno o en una hoja aparte. Después, compara con la solución modelo.</p>
+  </div>
+
+  <!-- MUSTERLÖSUNG -->
+  <div class="card" style="margin-top:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+      <h3>💡 Solución modelo</h3>
+      <button onclick="toggleSolution()" id="sol-btn" class="check-btn">Mostrar solución</button>
+    </div>
+    <div id="solution-text" style="display:none;">
+      <div style="background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 1.25rem; font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">
+
+        <p style="font-size:0.82rem; color:var(--green); font-weight:600; margin-bottom:0.75rem;">✅ SOLUCIÓN MODELO – 20 puntos</p>
+
+        <p>Mira, el Cañón del Sumidero está en el estado mexicano de Chiapas, a unos quince kilómetros de la capital Tuxtla Gutiérrez. Es un parque nacional desde 1980 y uno de los monumentos naturales más impresionantes de México. Por el cañón pasa el río Grijalva, que desemboca en un gran embalse.</p>
+        <br>
+        <p>En cuanto a la geografía, las paredes de roca llegan a casi mil metros de altura en algunos lugares. El cañón tiene aproximadamente treinta y cinco kilómetros de longitud. Lo más impresionante es la variedad de vegetación: hay árboles que crecen directamente en las paredes verticales.</p>
+        <br>
+        <p>En el parque viven más de cuatrocientos tipos de animales, entre ellos cocodrilos, monos, tucanes y mariposas. Además, hay más de trescientos tipos de plantas. El parque es un hábitat muy importante para muchas especies amenazadas.</p>
+        <br>
+        <p>Para los turistas, la manera más popular de explorar el cañón es hacer una excursión en barco por el río Grijalva. Las excursiones salen de Chiapa de Corzo y duran aproximadamente dos horas. También hay miradores en los bordes de las rocas desde donde se tiene una vista espectacular del cañón. La entrada cuesta aproximadamente quince euros. Además, cerca del parque se puede visitar la ciudad colonial de San Cristóbal de las Casas, que está solo a una hora de distancia.</p>
+        <br>
+        <p>¡Te lo recomiendo totalmente – vale la pena!</p>
+
+        <hr style="border:none; border-top:1px solid var(--green); margin:1rem 0;">
+        <p style="font-size:0.82rem; color:var(--green); font-weight:600;">📊 Criterios de evaluación:</p>
+        <table style="width:100%; font-size:0.82rem; border-collapse:collapse; margin-top:0.5rem;">
+          <tr style="background:rgba(45,106,45,0.1);">
+            <td style="padding:5px 8px; font-weight:600;">Ubicación</td>
+            <td style="padding:5px 8px;">Chiapas, 15 km de Tuxtla Gutiérrez, parque nacional desde 1980, río Grijalva</td>
+            <td style="padding:5px 8px; text-align:right; font-weight:600;">4 pts</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 8px; font-weight:600;">Geografía</td>
+            <td style="padding:5px 8px;">~1.000 m de altura, ~35 km de longitud, vegetación en las paredes</td>
+            <td style="padding:5px 8px; text-align:right; font-weight:600;">4 pts</td>
+          </tr>
+          <tr style="background:rgba(45,106,45,0.1);">
+            <td style="padding:5px 8px; font-weight:600;">Fauna y flora</td>
+            <td style="padding:5px 8px;">+400 animales (cocodrilos, monos, tucanes), +300 plantas, especies amenazadas</td>
+            <td style="padding:5px 8px; text-align:right; font-weight:600;">6 pts</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 8px; font-weight:600;">Oferta turística</td>
+            <td style="padding:5px 8px;">Excursión en barco desde Chiapa de Corzo (~2h), miradores, entrada ~15€, San Cristóbal</td>
+            <td style="padding:5px 8px; text-align:right; font-weight:600;">6 pts</td>
+          </tr>
+          <tr style="background:rgba(45,106,45,0.15);">
+            <td style="padding:5px 8px; font-weight:700;" colspan="2">Total</td>
+            <td style="padding:5px 8px; text-align:right; font-weight:700;">20 pts</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="card">
+    <h3>🧩 Vocabulario útil para la mediación</h3>
+    <table class="rule-table">
+      <thead><tr><th>Deutsch</th><th>Español</th></tr></thead>
+      <tbody>
+        <tr><td>die Felswand</td><td class="es">la pared de roca</td></tr>
+        <tr><td>der Stausee</td><td class="es">el embalse</td></tr>
+        <tr><td>die Bootstour</td><td class="es">la excursión en barco</td></tr>
+        <tr><td>der Aussichtspunkt</td><td class="es">el mirador</td></tr>
+        <tr><td>bedrohte Tierarten</td><td class="es">especies amenazadas</td></tr>
+        <tr><td>die Eintrittskarte</td><td class="es">la entrada / el billete de entrada</td></tr>
+        <tr><td>ungefähr / etwa</td><td class="es">aproximadamente / unos / unas</td></tr>
+        <tr><td>empfehlenswert</td><td class="es">recomendable / vale la pena</td></tr>
+        <tr><td>in der Nähe</td><td class="es">cerca / en las cercanías</td></tr>
+        <tr><td>der Bundesstaat</td><td class="es">el estado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ GUATEMALA -->
+<section class="section" id="guatemala">
+
+  <div class="level-badge level2">🗺️ Mediación – Guatemala</div>
+  <h2>Mediación: Un viaje por Guatemala</h2>
+  <p class="subtitle">Lee el blog de viaje alemán y transmite la información más importante en español. Esta tarea entrena exactamente las destrezas del examen – ¡pero con contenidos completamente nuevos!</p>
+
+  <!-- KARTE -->
+  <div class="card" style="margin-bottom:1.25rem;">
+    <h3>🗺️ Guatemala en el mapa</h3>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.75rem;">Ubica los lugares del blog: Ciudad de Guatemala, Antigua, Lago Atitlán, Tikal, Chichicastenango.</p>
+    <div style="border-radius:8px; overflow:hidden; border:1px solid var(--cream-dark);">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-93.0%2C13.5%2C-88.0%2C18.0&amp;layer=mapnik&amp;marker=15.5%2C-90.25"
+        width="100%" height="320" style="border:none; display:block;"
+        title="Karte von Guatemala"
+        loading="lazy"
+        allowfullscreen></iframe>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:0.75rem;">
+      <span style="background:var(--teal-light);color:var(--teal);padding:4px 10px;border-radius:16px;font-size:0.8rem;">📍 Ciudad de Guatemala – Hauptstadt</span>
+      <span style="background:var(--gold-light);color:var(--gold-dark);padding:4px 10px;border-radius:16px;font-size:0.8rem;">📍 Antigua – Kolonialstadt</span>
+      <span style="background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:16px;font-size:0.8rem;">📍 Lago Atitlán – Vulkansee</span>
+      <span style="background:var(--green-light);color:var(--green);padding:4px 10px;border-radius:16px;font-size:0.8rem;">📍 Tikal – Maya-Ruinen</span>
+      <span style="background:var(--red-light);color:var(--red);padding:4px 10px;border-radius:16px;font-size:0.8rem;">📍 Chichicastenango – Markt</span>
+    </div>
+  </div>
+
+  <!-- REISEBLOG -->
+  <div class="card" style="margin-bottom:1.25rem;">
+    <h3>📓 Reiseblog: Drei Wochen in Guatemala</h3>
+    <p style="font-size:0.78rem; color:var(--ink-soft); margin-bottom:1rem; font-style:italic;">von Lena Hoffmann, 19 Jahre, Köln – veröffentlicht im März 2026</p>
+
+    <div style="border-left:3px solid var(--gold); padding-left:1.25rem; margin-bottom:1.5rem;">
+      <p style="font-size:0.8rem; font-weight:700; color:var(--gold-dark); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Tag 1–3 · Antigua</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">Nach einem langen Flug über Madrid kamen wir endlich in der Kolonialstadt <strong>Antigua</strong> an – und ich war sofort verliebt. Die Stadt liegt auf fast 1.500 Metern Höhe, umgeben von drei aktiven Vulkanen: dem Agua, dem Fuego und dem Acatenango. Die bunten Fassaden der alten Häuser, die gepflasterten Straßen und die vielen Cafés machten Antigua zu einem meiner liebsten Orte überhaupt.</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Wir besichtigten die Ruinen des ehemaligen Klosters La Merced und bummelten über den Parque Central. Das Highlight war aber definitiv die Wanderung auf den Vulkan Acatenango – vier Stunden Aufstieg, eine eiskalte Nacht im Zelt auf 3.900 Metern, und am nächsten Morgen sahen wir den benachbarten Vulkan Fuego live ausbrechen. Unglaublich!</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Übernachtet haben wir in einer kleinen, familiengeführten Pension für nur 18 Euro pro Nacht mit Frühstück. Das Essen in den lokalen Comedores war günstig und lecker – mein Favorit war Pepián, ein traditioneller Maya-Eintopf mit Kürbiskernen.</p>
+    </div>
+
+    <div style="border-left:3px solid var(--teal); padding-left:1.25rem; margin-bottom:1.5rem;">
+      <p style="font-size:0.8rem; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Tag 4–7 · Lago Atitlán</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">Von Antigua fuhren wir drei Stunden mit dem Bus zum <strong>Lago Atitlán</strong>, dem tiefsten See Zentralamerikas – und angeblich einem der schönsten der Welt. Der See liegt auf 1.562 Metern und ist von drei Vulkanen umgeben. Rund um den See leben verschiedene indigene Maya-Völker, zum Beispiel die Tz'utujil und die Kaqchikel, die ihre Traditionen, ihre Kleidung und ihre Sprachen bis heute bewahren.</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Wir übernachteten im kleinen Dorf <em>San Marcos La Laguna</em>, das für seine ruhige Atmosphäre und seine Yoga-Zentren bekannt ist. Mit dem Lancha – einem schnellen kleinen Motorboot – erkundeten wir die verschiedenen Dörfer am Seeufer. In <em>Santiago Atitlán</em> besuchten wir den lokalen Markt und sprachen mit einem Weber, der uns zeigte, wie die typischen bunten Textilien mit dem traditionellen Rückengurt-Webstuhl hergestellt werden. Eine sehr beeindruckende Begegnung!</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Achtung: Am See kann es in der Nachmittagszeit starke Winde geben, den sogenannten <em>Xocomil</em>. Die Lancha-Fahrten am Morgen sind daher sicherer und angenehmer.</p>
+    </div>
+
+    <div style="border-left:3px solid var(--blue); padding-left:1.25rem; margin-bottom:1.5rem;">
+      <p style="font-size:0.8rem; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Tag 8–9 · Chichicastenango</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">Jeden Donnerstag und Sonntag findet in <strong>Chichicastenango</strong> einer der größten und farbenprächtigsten Märkte Lateinamerikas statt. Wir nahmen uns ein <em>Chicken Bus</em> – einen alten amerikanischen Schulbus, der hier als Linienbus fährt und immer randvoll besetzt ist – und kamen nach zwei Stunden an.</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Der Markt war ein Erlebnis für alle Sinne: bunte Textilien, Töpferwaren, frische Früchte und Gemüse, Räucherkerzen und Maya-Zeremonien vor der Kirche Santo Tomás. Wir kauften handgewebte Taschen und Schals für wenig Geld. Feilschen gehört übrigens dazu und wird erwartet! Die Einheimischen sprachen hauptsächlich K'iche', eine der 22 Maya-Sprachen Guatemalas.</p>
+    </div>
+
+    <div style="border-left:3px solid var(--green); padding-left:1.25rem; margin-bottom:1.5rem;">
+      <p style="font-size:0.8rem; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Tag 10–14 · Tikal (im Regenwald)</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">Das absolute Highlight der Reise war <strong>Tikal</strong>, das größte erhaltene Maya-Stadtgebiet in ganz Lateinamerika, tief im Regenwald des Petén-Tieflands. Tikal war zwischen 200 und 900 n. Chr. eine der mächtigsten Städte der Maya-Welt mit zeitweise bis zu 100.000 Einwohnern.</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Im Nationalpark Tikal gibt es mehr als 3.000 archäologische Strukturen – Tempel, Paläste, Plätze und Stelen. Tempel I und Tempel II am Gran Plaza ragen über 40 Meter in den Himmel. Der Dschungel ringsum ist ebenfalls beeindruckend: Brüllaffen, Tukane, Nashornkäfer, Ameisenbären und sogar Jaguare leben hier. Früh aufstehen lohnt sich besonders: Bei der Sunrise Tour um 4 Uhr morgens hört man das unglaubliche Konzert der Brüllaffen und sieht die Tempel aus dem Morgennebel auftauchen. Ein unvergessliches Erlebnis!</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;">Eintritt: ca. 20 Euro. Im Park gibt es Lodges direkt am Gelände. Anreise ab Ciudad de Guatemala: ca. 8 Stunden mit dem Bus oder 1 Stunde mit dem Flugzeug nach Flores (Flüge ab ca. 60 Euro).</p>
+    </div>
+
+    <div style="border-left:3px solid var(--red); padding-left:1.25rem;">
+      <p style="font-size:0.8rem; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Fazit & praktische Tipps</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid);">Guatemala hat mich völlig überrascht und begeistert. Das Land bietet Kolonialarchitektur, indigene Kulturen, aktive Vulkane, tropischen Regenwald und atemberaubende Seen – alles auf engstem Raum. Die Guatemalteken sind sehr freundlich und hilfsbereit.</p>
+      <p style="font-size:0.9rem; line-height:1.8; color:var(--ink-mid); margin-top:0.75rem;"><strong>Praktische Hinweise:</strong> Die Währung ist der Quetzal (ca. 12 Quetzal = 1 Euro). Das Klima ist angenehm: In den Bergregionen tagsüber ca. 22–26°C, nachts kühler. Die beste Reisezeit ist November bis April (Trockenzeit). Impfungen gegen Hepatitis A und Typhus werden empfohlen. Spanisch reicht für die meisten Situationen; viele Guatemalteken sprechen aber auch eine der 22 Maya-Sprachen.</p>
+    </div>
+  </div>
+
+  <!-- AUFGABE -->
+  <div class="card" style="border:2px solid var(--teal); margin-bottom:1.25rem;">
+    <h3 style="color:var(--teal);">✍️ Tu tarea de mediación</h3>
+    <div style="background:var(--teal-light);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem;font-size:0.9rem;line-height:1.7;color:var(--ink-mid);">
+      <strong>Situación:</strong> Tu amigo español Pablo quiere hacer un viaje a Guatemala. Él no entiende alemán. Leíste el blog de Lena y le explicas la información más importante en español.
+    </div>
+    <p style="font-size:0.9rem; color:var(--ink-mid); line-height:1.6; margin-bottom:0.75rem;">Explícale a Pablo la información sobre los siguientes aspectos. Escribe en español con tus propias palabras:</p>
+    <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+      <tr style="background:var(--ink);color:var(--gold-light);">
+        <th style="padding:8px 12px;text-align:left;">Apartado</th>
+        <th style="padding:8px 12px;text-align:left;">Contenido</th>
+        <th style="padding:8px 12px;text-align:right;">Puntos</th>
+      </tr>
+      <tr><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);"><strong>Antigua</strong></td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);">Situación geográfica, qué se puede ver/hacer, alojamiento y comida</td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);text-align:right;">6</td></tr>
+      <tr style="background:var(--cream);"><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);"><strong>Lago Atitlán</strong></td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);">Descripción del lago, pueblos indígenas, cómo moverse</td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);text-align:right;">6</td></tr>
+      <tr><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);"><strong>Tikal</strong></td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);">Historia, arquitectura, fauna, precio, cómo llegar</td><td style="padding:7px 12px;border-bottom:1px solid var(--cream-dark);text-align:right;">8</td></tr>
+      <tr style="background:var(--cream);"><td style="padding:7px 12px;"><strong>Información práctica</strong></td><td style="padding:7px 12px;">Moneda, clima, mejor época, idiomas</td><td style="padding:7px 12px;text-align:right;">4</td></tr>
+      <tr style="background:var(--ink);color:var(--gold-light);">
+        <td style="padding:8px 12px;" colspan="2"><strong>Total</strong></td>
+        <td style="padding:8px 12px;text-align:right;"><strong>24</strong></td>
+      </tr>
+    </table>
+    <div class="tip" style="margin-top:1rem;"><strong>💡 Consejos:</strong> Usa tus propias palabras – no copies el texto. Utiliza el vocabulario de apoyo. Puedes usar cuando / como / porque para conectar las frases.</div>
+  </div>
+
+  <!-- MUSTERLÖSUNG -->
+  <div class="card" style="margin-bottom:1.25rem;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:8px;">
+      <h3>💡 Solución modelo</h3>
+      <button onclick="toggleGuat()" id="guat-btn" class="check-btn">Mostrar solución</button>
+    </div>
+    <div id="guat-solution" style="display:none;">
+      <div style="background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:1.25rem;font-size:0.9rem;line-height:1.85;color:var(--ink-mid);">
+        <p style="font-size:0.8rem;color:var(--green);font-weight:700;margin-bottom:1rem;">✅ SOLUCIÓN MODELO – 24 puntos</p>
+
+        <p><strong>Sobre Antigua:</strong> Antigua es una ciudad colonial que está a unos 1.500 metros de altura y está rodeada de tres volcanes activos: el Agua, el Fuego y el Acatenango. Hay ruinas de conventos antiguos y una plaza central muy bonita. Como la ciudad es muy pintoresca, vale mucho la pena visitarla. Lo más especial es una excursión al volcán Acatenango: se sube cuatro horas, se pasa la noche en una tienda de campaña a 3.900 metros y se puede ver el volcán Fuego en erupción. Además, el alojamiento es muy barato – unos 18 euros por noche con desayuno. La comida local también es económica y deliciosa; el plato típico es el pepián.</p>
+
+        <p style="margin-top:1rem;"><strong>Sobre el Lago Atitlán:</strong> El Lago Atitlán es el lago más profundo de Centroamérica y está a 1.562 metros de altura, rodeado de tres volcanes. Alrededor del lago viven varios pueblos indígenas mayas que todavía conservan sus tradiciones, su ropa típica y sus idiomas. Para moverse entre los pueblos, se usa la lancha, que es un barco pequeño y rápido. Cuando vayas, ten cuidado con el viento fuerte que aparece por las tardes; es mejor viajar en lancha por las mañanas.</p>
+
+        <p style="margin-top:1rem;"><strong>Sobre Tikal:</strong> Tikal es la zona arqueológica maya más grande de toda Latinoamérica. Está en el Petén, en medio de la selva tropical. Fue una ciudad maya muy importante entre los años 200 y 900 d. C., con hasta cien mil habitantes. En el parque hay más de tres mil estructuras, como templos y palacios. Los templos I y II tienen más de cuarenta metros de altura. Como hay muchos animales en la selva – monos, tucanes y hasta jaguares –, la experiencia es increíble. Te recomiendo la excursión al amanecer, cuando los monos aulladores hacen mucho ruido y los templos emergen de la niebla. La entrada cuesta unos veinte euros. Puedes llegar en autobús desde la Ciudad de Guatemala en unas ocho horas, o en avión a Flores en una hora.</p>
+
+        <p style="margin-top:1rem;"><strong>Información práctica:</strong> La moneda es el quetzal – doce quetzales son aproximadamente un euro. El clima es muy agradable: en las zonas de montaña hace entre veintidós y veintiséis grados durante el día. La mejor época para visitar Guatemala es de noviembre a abril, porque es la época seca. En el país se habla español, pero también hay veintidós idiomas mayas.</p>
+
+        <hr style="border:none;border-top:1px solid var(--green);margin:1rem 0;">
+        <p style="font-size:0.8rem;color:var(--green);font-weight:700;">📊 Distribución de puntos:</p>
+        <table style="width:100%;font-size:0.82rem;border-collapse:collapse;margin-top:0.5rem;">
+          <tr style="background:rgba(45,106,45,0.12);">
+            <td style="padding:5px 8px;font-weight:600;">Antigua (6 pts)</td>
+            <td style="padding:5px 8px;">Altura, 3 volcanes, ruinas, Acatenango, precio alojamiento, pepián</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 8px;font-weight:600;">Lago Atitlán (6 pts)</td>
+            <td style="padding:5px 8px;">Lago más profundo, altura, pueblos mayas, lancha, viento Xocomil</td>
+          </tr>
+          <tr style="background:rgba(45,106,45,0.12);">
+            <td style="padding:5px 8px;font-weight:600;">Tikal (8 pts)</td>
+            <td style="padding:5px 8px;">Mayor zona maya, Petén, fechas, 100.000 hab., 3.000 estructuras, fauna, precio, transporte</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 8px;font-weight:600;">Inf. práctica (4 pts)</td>
+            <td style="padding:5px 8px;">Quetzal, temperatura, temporada seca (nov–abr), 22 idiomas mayas</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCAB SUPPORT -->
+  <div class="card">
+    <h3>🧩 Vocabulario de apoyo – Guatemala</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:0.5rem;">
+      <div style="font-size:0.82rem;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="background:var(--ink);color:var(--gold-light);"><th style="padding:6px 10px;text-align:left;font-size:0.78rem;">Deutsch</th><th style="padding:6px 10px;text-align:left;font-size:0.78rem;">Español</th></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">der Vulkan</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">el volcán</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">die Ruinen</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">las ruinas</td></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">der Regenwald</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">la selva tropical</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">der Tempel</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">el templo</td></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">der Markt</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">el mercado</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;">das Kloster</td><td style="padding:5px 10px;color:var(--teal);font-weight:600;">el convento / el monasterio</td></tr>
+        </table>
+      </div>
+      <div style="font-size:0.82rem;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="background:var(--ink);color:var(--gold-light);"><th style="padding:6px 10px;text-align:left;font-size:0.78rem;">Deutsch</th><th style="padding:6px 10px;text-align:left;font-size:0.78rem;">Español</th></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">die Währung</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">la moneda</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">die Trockenzeit</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">la época seca / la temporada seca</td></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">indigene Völker</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">los pueblos indígenas</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">die Ausgrabungsstätte</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">la zona arqueológica</td></tr>
+          <tr><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);">der Sonnenaufgang</td><td style="padding:5px 10px;border-bottom:1px solid var(--cream-dark);color:var(--teal);font-weight:600;">el amanecer</td></tr>
+          <tr style="background:var(--cream);"><td style="padding:5px 10px;">günstig / preiswert</td><td style="padding:5px 10px;color:var(--teal);font-weight:600;">económico / barato</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ONLINE -->
+<section class="section" id="online">
+
+  <div class="level-badge level1">🌐 Ejercicios online</div>
+  <h2>Ejercicios online y recursos</h2>
+  <p class="subtitle">Haz clic en los enlaces para acceder directamente a los ejercicios.</p>
+
+  <h3 style="margin-bottom:0.75rem; color:var(--teal);">⭐ Nivel 1 – Para empezar</h3>
+
+  <a class="link-card" href="https://www.conjugacion.es/del/verbo/hablar.php" target="_blank">
+    <div class="link-icon">🔤</div>
+    <div><div class="link-title">conjugacion.es – Conjugar verbos</div><div class="link-desc">Introduce cualquier infinitivo → tabla completa de conjugación incl. indefinido</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.spanisch-lernen-online.com/grammatik/vergangenheit/preterito-indefinido/" target="_blank">
+    <div class="link-icon">📖</div>
+    <div><div class="link-title">Spanisch-lernen-online.com – Explicación del indefinido</div><div class="link-desc">Explicación gramatical clara en alemán con ejemplos y ejercicios</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.ego4u.de/de/language/spanish/grammar/preterito-indefinido" target="_blank">
+    <div class="link-icon">📝</div>
+    <div><div class="link-title">ego4u.de – Ejercicios del indefinido</div><div class="link-desc">Textos con huecos interactivos y tests para el pretérito indefinido</div></div>
+  </a>
+
+  <a class="link-card" href="https://quizlet.com/de/subject/preterito-indefinido/" target="_blank">
+    <div class="link-icon">🃏</div>
+    <div><div class="link-title">Quizlet – Tarjetas del indefinido</div><div class="link-desc">Tarjetas de memoria, juegos de matching y tests para verbos irregulares</div></div>
+  </a>
+
+  <hr class="section-divider">
+
+  <h3 style="margin-bottom:0.75rem; color:var(--gold-dark);">⭐⭐ Nivel 2 – Para avanzados</h3>
+
+  <a class="link-card" href="https://www.languageguide.org/spanish/vocabulary/travel/" target="_blank">
+    <div class="link-icon">🗺️</div>
+    <div><div class="link-title">languageguide.org – Vocabulario de viajes</div><div class="link-desc">Vocabulario interactivo sobre viajes con imágenes y audio</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.spanishdict.com/conjugate" target="_blank">
+    <div class="link-icon">🔍</div>
+    <div><div class="link-title">SpanishDict – Conjugador y ejercicios</div><div class="link-desc">Conjugador profesional para todos los tiempos – con función de quiz para el indefinido</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.practiquemos.com/pages/verbs-in-spanish-preterite-tense-exercises" target="_blank">
+    <div class="link-icon">✏️</div>
+    <div><div class="link-title">practiquemos.com – Preterite exercises</div><div class="link-desc">Ejercicios interactivos completos (regulares + irregulares), directamente en el navegador</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.ver-taal.com/ejercicios_indefinido.htm" target="_blank">
+    <div class="link-icon">🎯</div>
+    <div><div class="link-title">ver-taal.com – Ejercicios del indefinido</div><div class="link-desc">Textos con huecos, opción múltiple y construcción de oraciones para el pretérito indefinido</div></div>
+  </a>
+
+  <hr class="section-divider">
+
+  <h3 style="margin-bottom:0.75rem; color:var(--teal);">🎧 Comprensión auditiva y lectora</h3>
+
+  <a class="link-card" href="https://www.youtube.com/results?search_query=Machu+Picchu+documental+en+espa%C3%B1ol" target="_blank">
+    <div class="link-icon">▶️</div>
+    <div><div class="link-title">YouTube – Documentales sobre Perú y México</div><div class="link-desc">Busca «Machu Picchu documental» o «Cañón del Sumidero» para practicar la comprensión auditiva</div></div>
+  </a>
+
+  <a class="link-card" href="https://www.bbc.co.uk/learningenglish/spanish" target="_blank">
+    <div class="link-icon">📻</div>
+    <div><div class="link-title">BBC Learning – Español</div><div class="link-desc">Ejercicios cortos de comprensión auditiva y lectora en distintos niveles (también sobre Latinoamérica)</div></div>
+  </a>
+
+  <div class="tip" style="margin-top:1.5rem;">
+    <strong>💡 Orden recomendado para preparar el examen:</strong><br>
+    1. ego4u / ver-taal → practicar formas regulares<br>
+    2. practiquemos.com → textos mixtos con verbos irregulares<br>
+    3. Quizlet → tarjetas con los verbos irregulares más frecuentes<br>
+    4. YouTube → ver un vídeo en español sobre Perú o México (comprensión auditiva)
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ DIALOGO -->
+<section class="section" id="dialogo">
+
+  <div class="level-badge level2" style="background:#F5E8C8; color:#8B6520;">🎙️ Tarea oral obligatoria</div>
+  <h2>Expresión e interacción oral</h2>
+  <p class="subtitle">Esta tarea es obligatoria para todos los alumnos. Lee las instrucciones con atención.</p>
+
+  <!-- INFO BOX -->
+  <div style="background:var(--ink); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:1.5rem; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-30px; right:-30px; width:140px; height:140px; border-radius:50%; border:30px solid rgba(200,151,58,0.15);"></div>
+    <p style="color:var(--gold); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:0.5rem;">📌 Información importante</p>
+    <p style="color:#fff; font-size:1.05rem; font-weight:600; line-height:1.5; margin-bottom:1rem;">Todos los alumnos tienen que realizar un diálogo oral en español.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:1rem;">
+        <p style="color:var(--gold); font-size:0.8rem; font-weight:700; margin-bottom:0.4rem;">📄 El material</p>
+        <p style="color:rgba(245,232,200,0.8); font-size:0.85rem; line-height:1.6;">La tarjeta de tarea para el diálogo está disponible con el <strong style="color:#fff;">profesor/la profesora</strong>. Recógela antes de la conversación.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:1rem;">
+        <p style="color:var(--gold); font-size:0.8rem; font-weight:700; margin-bottom:0.4rem;">🗓️ Entrega</p>
+        <p style="color:rgba(245,232,200,0.8); font-size:0.85rem; line-height:1.6;">La grabación de audio debe subirse a <strong style="color:#fff;">OneNote antes del examen</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOS OPCIONES -->
+  <h3 style="margin-bottom:0.75rem;">Elige una de las dos opciones:</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:1.5rem;">
+
+    <div style="background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:1.4rem; border-top:4px solid var(--teal);">
+      <p style="font-size:0.72rem; font-weight:700; color:var(--teal); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.5rem;">Opción A</p>
+      <p style="font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:0.75rem;">👥 Con un compañero / una compañera</p>
+      <ol style="padding-left:1.2rem; font-size:0.88rem; line-height:2.1; color:var(--ink-mid);">
+        <li>Recoge la tarjeta de tarea del profesor / de la profesora.</li>
+        <li>Practica el diálogo con tu compañero/a.</li>
+        <li>Grabad el diálogo en español.</li>
+        <li>Sube el audio a <strong>OneNote</strong>.</li>
+      </ol>
+      <div style="background:var(--teal-light); border-radius:6px; padding:8px 12px; margin-top:0.75rem; font-size:0.82rem; color:var(--teal);">
+        💡 Usa tu móvil u ordenador con micrófono para la grabación.
+      </div>
+    </div>
+
+    <div style="background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:1.4rem; border-top:4px solid var(--gold);">
+      <p style="font-size:0.72rem; font-weight:700; color:var(--gold-dark); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.5rem;">Opción B</p>
+      <p style="font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:0.75rem;">👩‍🏫 Con el profesor / la profesora</p>
+      <ol style="padding-left:1.2rem; font-size:0.88rem; line-height:2.1; color:var(--ink-mid);">
+        <li>Ponte de acuerdo con el profesor / la profesora para fijar una cita.</li>
+        <li>Lee y prepara la tarjeta de tarea con antelación.</li>
+        <li>Realiza la conversación en persona.</li>
+        <li>No hace falta grabar – el profesor / la profesora anota la nota.</li>
+      </ol>
+      <div style="background:var(--gold-light); border-radius:6px; padding:8px 12px; margin-top:0.75rem; font-size:0.82rem; color:var(--gold-dark);">
+        💡 Avisa con tiempo: las citas disponibles son limitadas.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CRITERIOS -->
+  <div class="card" style="margin-bottom:1.5rem;">
+    <h3>📊 Criterios de evaluación</h3>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.75rem;">La tarea exacta y la rúbrica de corrección las recibirás del profesor / de la profesora. En general se valora:</p>
+    <table class="rule-table">
+      <thead><tr><th>Criterio</th><th>¿Qué se evalúa?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pronunciación</strong></td><td>Pronunciación clara y comprensible, acentuación correcta</td></tr>
+        <tr><td><strong>Fluidez</strong></td><td>Conversación natural, sin pausas largas</td></tr>
+        <tr><td><strong>Vocabulario</strong></td><td>Léxico variado y adecuado al tema de los viajes / Perú</td></tr>
+        <tr><td><strong>Gramática</strong></td><td>Uso correcto del indefinido y de las conjunciones</td></tr>
+        <tr><td><strong>Interacción</strong></td><td>Reaccionar al compañero / al profesor, hacer preguntas</td></tr>
+      </tbody>
+    </table>
+    <div style="background:var(--blue-light); border-left:4px solid var(--blue); border-radius:0 8px 8px 0; padding:1rem 1.25rem; margin-top:1rem; font-size:0.88rem; color:var(--ink-mid);">
+      <strong style="color:var(--blue);">🗣️ Consejos para prepararte:</strong>
+      <ul style="padding-left:1.2rem; margin-top:0.4rem; line-height:2;">
+        <li>¡Practica hablando en voz alta, no solo leyendo en silencio!</li>
+        <li>Grábate mientras practicas y escúchate después.</li>
+        <li>Usa el vocabulario y las frases de los otros apartados (Vocabulario, Nivel 1 &amp; 2).</li>
+        <li>Practica el indefinido oralmente: cuenta qué hiciste el fin de semana pasado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SELBSTEINSCHÄTZUNG CHECKBOXES -->
+  <div class="card">
+    <h3>☑️ → Ve al apartado <em>Kann-Liste</em> en la barra de navegación para comprobar todos tus conocimientos.</h3>
+    <p style="font-size:0.88rem; color:var(--ink-soft);">Allí encontrarás la lista completa con los objetivos de aprendizaje, ejemplos y una autoevaluación interactiva.</p>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ KANN-LISTE -->
+<section class="section" id="kannliste">
+
+  <div class="level-badge level1" style="background:var(--gold-light); color:var(--gold-dark);">✅ Autoevaluación 6</div>
+  <h2>Kann-Liste – ¿Qué tienes que saber?</h2>
+  <p class="subtitle">Comprueba tus conocimientos. Si dominas todo, estás listo/a para el examen.</p>
+
+  <div class="grammar-box" style="background:var(--gold-light); border-color:var(--gold);">
+    <h3 style="color:var(--gold-dark);">📌 Cómo usar esta lista</h3>
+    <p style="margin-top:0.4rem; font-size:0.88rem; color:var(--ink-mid);">Lee cada tarea, intenta resolverla tú solo/a y luego compara con la solución. Al final, marca tu autoevaluación con las casillas de verificación.</p>
+  </div>
+
+  <!-- KANN-LISTE 1: historische Ereignisse -->
+  <div class="card" style="margin-bottom:1rem;">
+    <h3>📅 Hablar de eventos históricos en el pasado</h3>
+    <p style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:0.75rem;">Escribe las frases en indefinido – después comprueba con las soluciones.</p>
+    <table class="rule-table">
+      <thead><tr><th style="width:45%;">Tarea</th><th>Solución</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1492: <em>empezar la conquista de América</em></td>
+          <td class="es">La conquista de América empezó en mil cuatrocientos noventa y dos.</td>
+        </tr>
+        <tr>
+          <td>1532–1821: <em>los conquistadores matar a muchos indígenas en Perú</em></td>
+          <td class="es">Entre mil quinientos treinta y dos y mil ochocientos veintiuno, los conquistadores mataron a muchos indígenas en Perú.</td>
+        </tr>
+        <tr>
+          <td>1989: <em>ser un año histórico para Alemania</em></td>
+          <td class="es">Mil novecientos ochenta y nueve fue un año histórico para Alemania.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:0.75rem;"><strong>💡 Recuerda:</strong> Los años se leen como números enteros en español – nunca se dividen en pares como en alemán o inglés.</div>
+  </div>
+
+  <!-- KANN-LISTE 2: erzählen was du erlebt hast -->
+  <div class="card" style="margin-bottom:1rem;">
+    <h3>💬 Contar lo que has vivido – preguntas y respuestas</h3>
+    <p style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:0.75rem;">Intenta formular las frases tú solo/a – después comprueba.</p>
+    <table class="rule-table">
+      <thead><tr><th style="width:45%;">Situación</th><th>Solución</th></tr></thead>
+      <tbody>
+        <tr><td>Preguntas a Juan y Ana qué hicieron el fin de semana pasado.</td><td class="es">¿Qué hicisteis el fin de semana pasado?</td></tr>
+        <tr><td>Preguntas a Ana dónde estuvo ayer.</td><td class="es">Ana, ¿dónde estuviste ayer?</td></tr>
+        <tr><td>Preguntas a Juan por qué no fue a tu casa.</td><td class="es">Juan, ¿por qué no viniste a (mi) casa?</td></tr>
+        <tr><td>Dices que fuiste al cine el viernes pasado.</td><td class="es">El viernes pasado fui al cine.</td></tr>
+        <tr><td>Dices que ayer te acostaste tarde.</td><td class="es">Ayer me acosté tarde.</td></tr>
+        <tr><td>Dices que conociste a tu novia/amiga el año pasado.</td><td class="es">Conocí a mi novia/amiga el año pasado.</td></tr>
+        <tr><td>Dices que el mes pasado tus padres y tú comisteis en un restaurante español.</td><td class="es">El mes pasado, mis padres y yo comimos en un restaurante español.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- KANN-LISTE 3: umschreiben -->
+  <div class="card" style="margin-bottom:1.5rem;">
+    <h3>🔄 Explicar y describir palabras (circunloquio)</h3>
+    <p style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:0.75rem;">Si no sabes una palabra exacta, ¡descríbela! Importante también para el diálogo oral.</p>
+    <table class="rule-table">
+      <thead><tr><th style="width:45%;">Situación</th><th>Solución</th></tr></thead>
+      <tbody>
+        <tr><td>¿Qué es una «Brezel»?</td><td class="es">Una «Brezel» es algo para comer.</td></tr>
+        <tr><td>¿Qué es un «Weltenbummler»?</td><td class="es">Es una persona que viaja mucho.</td></tr>
+        <tr><td>¿Qué significa «Insel»?</td><td class="es">Significa «isla».</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:0.75rem;"><strong>🗣️ Fórmulas útiles:</strong> <span class="es">«Es algo para…» / «Es una persona que…» / «Es un lugar donde…» / «Significa…»</span></div>
+  </div>
+
+  <!-- SELBSTEINSCHÄTZUNG -->
+  <div class="card">
+    <h3>☑️ Autoevaluación personal – ¿Qué dominas?</h3>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:1rem;">Marca cada punto honestamente. Lo que no dominas todavía → repásalo en los otros apartados.</p>
+    <div id="checklist" style="display:flex; flex-direction:column; gap:8px;"></div>
+    <div id="check-result" style="margin-top:1rem; padding:10px 14px; border-radius:8px; font-size:0.88rem; font-weight:600; display:none;"></div>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+let s1Correct = 0, s1Total = 0;
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const btns = document.querySelectorAll('nav button');
+  const ids = ['grammatik','vokabeln','stufe1','stufe2','kannliste','mediacion','guatemala','online','dialogo'];
+  btns[ids.indexOf(id)].classList.add('active');
+}
+
+function toggleSolution() {
+  const sol = document.getElementById('solution-text');
+  const btn = document.getElementById('sol-btn');
+  if(sol.style.display==='none'){sol.style.display='block';btn.textContent='Ocultar solución';}
+  else{sol.style.display='none';btn.textContent='Mostrar solución';}
+}
+
+function toggleGuat() {
+  const sol = document.getElementById('guat-solution');
+  const btn = document.getElementById('guat-btn');
+  if(sol.style.display==='none'){sol.style.display='block';btn.textContent='Ocultar solución';}
+  else{sol.style.display='none';btn.textContent='Mostrar solución';}
+}
+
+/* ── VOKABELN ── */
+const vocab = [
+  {es:'el paisaje',de:'die Landschaft'},
+  {es:'la playa',de:'der Strand'},
+  {es:'los Andes',de:'die Anden'},
+  {es:'la Amazonía',de:'das Amazonasgebiet'},
+  {es:'el lago',de:'der See'},
+  {es:'la isla flotante',de:'die Floßinsel'},
+  {es:'el pueblo indígena',de:'das indigene Volk'},
+  {es:'las tradiciones',de:'die Traditionen'},
+  {es:'la arquitectura',de:'die Architektur'},
+  {es:'visitar',de:'besuchen'},
+  {es:'practicar el surf',de:'surfen'},
+  {es:'limitar con',de:'grenzen an'},
+  {es:'la capital',de:'die Hauptstadt'},
+  {es:'los edificios antiguos',de:'alte Gebäude'},
+  {es:'el turismo',de:'der Tourismus'},
+  {es:'la artesanía',de:'das Kunsthandwerk'},
+  {es:'la balsa',de:'das Floß'},
+  {es:'impresionante',de:'beeindruckend'},
+  {es:'fenomenal',de:'fantastisch'},
+  {es:'vale la pena',de:'es lohnt sich'},
+  {es:'el escritor',de:'der Schriftsteller'},
+  {es:'nacer',de:'geboren werden'},
+  {es:'mudarse',de:'umziehen'},
+  {es:'recibir',de:'erhalten / empfangen'},
+];
+function buildVocab() {
+  const grid = document.getElementById('vocab-grid');
+  vocab.forEach((v,i) => {
+    const card = document.createElement('div');
+    card.style.cssText='background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;cursor:pointer;min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:all 0.2s;border:2px solid transparent;';
+    card.innerHTML=`<div style="font-weight:600;color:var(--teal);font-size:1rem;">${v.es}</div><div style="font-size:0.82rem;color:var(--ink-soft);margin-top:6px;display:none;" class="trans">${v.de}</div><div style="font-size:0.75rem;color:var(--gold);margin-top:6px;">👆 Klicken</div>`;
+    card.onclick=()=>{
+      const t=card.querySelector('.trans');
+      const h=card.querySelector('div:last-child');
+      if(t.style.display==='none'){t.style.display='block';h.style.display='none';card.style.borderColor='var(--gold)';}
+      else{t.style.display='none';h.style.display='block';card.style.borderColor='transparent';}
+    };
+    grid.appendChild(card);
+  });
+}
+buildVocab();
+
+/* ── MC QUIZ (Stufe 1) ── */
+const mcData = [
+  {q:'Cristina ___ (ir) al cine con su novio el sábado.', opts:['fue','iba','va','fuiste'], ans:0},
+  {q:'Mario Vargas Llosa ___ (nacer) en Arequipa en 1936.', opts:['nacía','nació','nace','naciste'], ans:1},
+  {q:'Nosotros ___ (comer) ceviche después del cine.', opts:['comemos','comimos','comieron','comiste'], ans:1},
+  {q:'Yo ___ (levantarse) muy tarde el sábado.', opts:['levantó','levantaste','me levanté','te levantaste'], ans:2},
+  {q:'En 2010 Vargas Llosa ___ (recibir) el Premio Nobel.', opts:['recibió','recibía','recibe','recibiste'], ans:0},
+  {q:'Sabrina y su tío ___ (ir) a Pisaq en autobús desde Cuzco.', opts:['fue','iba','fueron','van'], ans:2},
+  {q:'Me ___ (encantar) la película – ¡fue genial!', opts:['encantaba','encantó','encanto','encantaron'], ans:1},
+  {q:'Por la noche me ___ (dormirse) enseguida.', opts:['dormí','durmió','dormiste','me dormí'], ans:3},
+];
+function buildMC() {
+  const c = document.getElementById('mc-quiz');
+  mcData.forEach((item,i) => {
+    const d = document.createElement('div');
+    d.className='quiz-item';
+    d.innerHTML=`<div class="question">${i+1}. ${item.q}</div><div class="options">${item.opts.map((o,j)=>`<button class="opt-btn" onclick="checkMC(this,${j},${item.ans},${i})">${o}</button>`).join('')}</div><div class="feedback" id="fb-mc-${i}"></div>`;
+    c.appendChild(d);
+  });
+  s1Total += mcData.length;
+}
+function checkMC(btn,chosen,correct,i) {
+  const parent=btn.closest('.quiz-item');
+  parent.querySelectorAll('.opt-btn').forEach(b=>{b.classList.add('disabled');b.onclick=null;});
+  const fb=document.getElementById(`fb-mc-${i}`);
+  if(chosen===correct){btn.classList.add('correct');fb.textContent='✅ Richtig!';fb.className='feedback show ok';s1Correct++;updateS1();}
+  else{btn.classList.add('wrong');parent.querySelectorAll('.opt-btn')[correct].classList.add('correct');fb.textContent='❌ Leider falsch – die richtige Antwort ist markiert.';fb.className='feedback show fail';}
+}
+
+/* ── TF QUIZ (Stufe 1) ── */
+const tfData = [
+  {q:'Perú limita con Paraguay y Venezuela.', ans:false, cor:'Perú limita con Chile, Bolivia, Brasil, Colombia y Ecuador.'},
+  {q:'En Cerro Azul se puede practicar el surf.', ans:true},
+  {q:'La ciudad inca más famosa es Pisaq.', ans:false, cor:'La ciudad inca más famosa es Machu Picchu.'},
+  {q:'En enero llueve mucho en la Amazonía.', ans:true},
+  {q:'Muchos turistas visitan el Lago Titicaca cada año.', ans:true},
+  {q:'Los uros venden sus botes a los turistas.', ans:false, cor:'Los uros venden productos artesanales (no sus botes).'},
+  {q:'Para los jóvenes uros, la vida en las islas es muy fácil.', ans:false, cor:'Para los jóvenes, la vida en las islas es difícil.'},
+  {q:'Un gran número de uros vive en la ciudad de Puno.', ans:true},
+];
+function buildTF() {
+  const c = document.getElementById('tf-quiz');
+  tfData.forEach((item,i) => {
+    const d = document.createElement('div');
+    d.className='quiz-item';
+    d.innerHTML=`<div class="question">${i+1}. ${item.q}</div><div class="options" style="flex-direction:row;gap:10px;"><button class="opt-btn" style="flex:1;" onclick="checkTF(this,true,${item.ans},${i})">✅ correcto</button><button class="opt-btn" style="flex:1;" onclick="checkTF(this,false,${item.ans},${i})">❌ falso</button></div><div class="feedback" id="fb-tf-${i}"></div>`;
+    c.appendChild(d);
+  });
+  s1Total += tfData.length;
+}
+function checkTF(btn,chosen,correct,i) {
+  const parent=btn.closest('.quiz-item');
+  parent.querySelectorAll('.opt-btn').forEach(b=>{b.classList.add('disabled');b.onclick=null;});
+  const fb=document.getElementById(`fb-tf-${i}`);
+  if(chosen===correct){btn.classList.add('correct');fb.textContent='✅ Richtig!';fb.className='feedback show ok';s1Correct++;updateS1();}
+  else{btn.classList.add('wrong');const cor=tfData[i].cor?` Korrekt: ${tfData[i].cor}`:'';fb.textContent=`❌ Falsch.${cor}`;fb.className='feedback show fail';}
+}
+
+/* ── KONJ QUIZ (Stufe 1) ── */
+const konjData = [
+  {q:'___ Luciana vivió en una isla flotante, sacó las fotos.', opts:['cuando','como','porque'], ans:0, hint:'Es geht um den Zeitpunkt (als sie dort lebte).'},
+  {q:'___ a Luciana le interesó el lago Titicaca, hizo una exposición.', opts:['cuando','como','porque'], ans:1, hint:'como steht am Satzanfang und drückt den Grund aus.'},
+  {q:'Luciana hizo una exposición ___ le interesó el lago.', opts:['cuando','como','porque'], ans:2, hint:'porque steht in der Satzmitte.'},
+  {q:'Luciana se puso mejor, ___ los uros le dieron hojas de coca.', opts:['cuando','como','porque'], ans:2, hint:'Der Grund kommt nach dem Hauptsatz.'},
+  {q:'___ Luciana habló con los uros, la invitaron a salir.', opts:['cuando','como','porque'], ans:0, hint:'Zeitpunkt: als sie sprach.'},
+];
+function buildKonj() {
+  const c = document.getElementById('konj-quiz');
+  konjData.forEach((item,i) => {
+    const d = document.createElement('div');
+    d.className='quiz-item';
+    d.innerHTML=`<div class="question">${i+1}. ${item.q}</div><div class="options" style="flex-direction:row;gap:8px;">${item.opts.map((o,j)=>`<button class="opt-btn" style="flex:1;" onclick="checkKonj(this,${j},${item.ans},${i})">${o}</button>`).join('')}</div><div class="feedback" id="fb-k-${i}"></div>`;
+    c.appendChild(d);
+  });
+  s1Total += konjData.length;
+}
+function checkKonj(btn,chosen,correct,i) {
+  const parent=btn.closest('.quiz-item');
+  parent.querySelectorAll('.opt-btn').forEach(b=>{b.classList.add('disabled');b.onclick=null;});
+  const fb=document.getElementById(`fb-k-${i}`);
+  if(chosen===correct){btn.classList.add('correct');fb.textContent=`✅ Richtig! Hinweis: ${konjData[i].hint}`;fb.className='feedback show ok';s1Correct++;updateS1();}
+  else{btn.classList.add('wrong');parent.querySelectorAll('.opt-btn')[correct].classList.add('correct');fb.textContent=`❌ Falsch. ${konjData[i].hint}`;fb.className='feedback show fail';}
+}
+
+function updateS1() {
+  document.getElementById('s1-score').textContent=`${s1Correct} / ${s1Total}`;
+}
+
+/* ── FILL QUIZ (Stufe 2) ── */
+const fillData = [
+  {pre:'El viernes pasado Cristina', verb:'salir', suffix:'al barrio Miraflores.', ans:'salió', person:'ella'},
+  {pre:'Nosotros', verb:'ir', suffix:'al cine y vimos una comedia.', ans:'fuimos', person:'nosotros'},
+  {pre:'Mario Vargas Llosa', verb:'nacer', suffix:'el 28 de marzo de 1936.', ans:'nació', person:'él'},
+  {pre:'Ellos', verb:'mudarse', suffix:'a vivir a Bolivia.', ans:'se mudaron', person:'ellos'},
+  {pre:'A los 16 años, Vargas Llosa', verb:'empezar', suffix:'a trabajar como periodista.', ans:'empezó', person:'él'},
+  {pre:'En 2010', verb:'recibir', suffix:'el Premio Nobel de Literatura.', ans:'recibió', person:'él'},
+  {pre:'Por la noche yo', verb:'dormirse', suffix:'enseguida.', ans:'me dormí', person:'yo'},
+  {pre:'Sabrina y su tío', verb:'ir', suffix:'a Pisaq en autobús desde Cuzco.', ans:'fueron', person:'ellos'},
+];
+function buildFill() {
+  const c = document.getElementById('fill-quiz');
+  fillData.forEach((item,i) => {
+    const d = document.createElement('div');
+    d.className='quiz-item';
+    d.innerHTML=`<div class="question">${i+1}. ${item.pre} <span style="color:var(--gold-dark);font-style:italic;">(${item.verb})</span> ${item.suffix}</div>
+    <input class="fill-input" placeholder="Indefinido-Form eingeben…" id="fi-${i}" autocomplete="off" spellcheck="false">
+    <button class="check-btn" onclick="checkFill(${i})">Prüfen</button>
+    <div class="feedback" id="fb-fi-${i}"></div>`;
+    c.appendChild(d);
+  });
+}
+function checkFill(i) {
+  const inp=document.getElementById(`fi-${i}`);
+  const fb=document.getElementById(`fb-fi-${i}`);
+  const val=inp.value.trim().toLowerCase();
+  const ans=fillData[i].ans.toLowerCase();
+  if(val===ans){inp.className='fill-input correct-input';fb.textContent='✅ Perfecto!';fb.className='feedback show ok';}
+  else{inp.className='fill-input wrong-input';fb.textContent=`❌ Leider falsch. Richtig: ${fillData[i].ans}`;fb.className='feedback show fail';}
+}
+
+/* ── MATCH (Stufe 2) ── */
+const matchPairs = [
+  {left:'Como Luciana estuvo a 4.000 metros por primera vez,', right:'tuvo que adaptarse a la altura.'},
+  {left:'Cuando los turistas llegan a las islas,', right:'los uros se presentan con sus ropas típicas.'},
+  {left:'Luciana se puso mejor,', right:'porque los uros le dieron hojas de coca.'},
+  {left:'Mario fue a Bolivia,', right:'porque sus padres se divorciaron.'},
+  {left:'Cuando Sabrina vivió en Perú,', right:'visitó muchos lugares impresionantes.'},
+];
+let matchSel = null;
+function buildMatch() {
+  const c = document.getElementById('match-quiz');
+  const shuffled = [...matchPairs].sort(()=>Math.random()-0.5);
+  const rightShuf = matchPairs.map(p=>p.right).sort(()=>Math.random()-0.5);
+  const grid = document.createElement('div');
+  grid.className='match-grid';
+  matchPairs.forEach((p,i)=>{
+    const lBtn=document.createElement('div');lBtn.className='match-item';lBtn.textContent=p.left;lBtn.dataset.side='left';lBtn.dataset.idx=String(i);lBtn.onclick=()=>handleMatch(lBtn);
+    grid.appendChild(lBtn);
+    const rText=rightShuf[i];
+    const rIdx=matchPairs.findIndex(x=>x.right===rText);
+    const rBtn=document.createElement('div');rBtn.className='match-item';rBtn.textContent=rText;rBtn.dataset.side='right';rBtn.dataset.idx=String(rIdx);rBtn.onclick=()=>handleMatch(rBtn);
+    grid.appendChild(rBtn);
+  });
+  c.appendChild(grid);
+}
+function handleMatch(el) {
+  if(el.classList.contains('matched')) return;
+  if(!matchSel) {matchSel=el;el.classList.add('selected');return;}
+  if(matchSel===el){matchSel.classList.remove('selected');matchSel=null;return;}
+  if(matchSel.dataset.side===el.dataset.side){matchSel.classList.remove('selected');matchSel=el;el.classList.add('selected');return;}
+  if(matchSel.dataset.idx===el.dataset.idx){
+    matchSel.classList.remove('selected');matchSel.classList.add('matched');el.classList.add('matched');matchSel=null;
+  } else {
+    matchSel.classList.remove('selected');matchSel.classList.add('wrong-match');el.classList.add('wrong-match');
+    setTimeout(()=>{matchSel&&matchSel.classList.remove('wrong-match');el.classList.remove('wrong-match');matchSel=null;},800);
+    matchSel=null;
+  }
+}
+
+/* ── MITTLUNG (Stufe 2) ── */
+const mittData = [
+  {de:'ungefähr 80 verschiedene Tierarten', es:'aproximadamente 80 tipos de animales'},
+  {de:'über 500 Vogelarten', es:'más de 500 tipos de pájaros'},
+  {de:'zwischen 3 Stunden und 5 Tagen', es:'entre 3 horas y 5 días'},
+  {de:'Die Preise sind erschwinglich.', es:'Los precios son baratos.'},
+  {de:'am Übergang vom Andengebiet ins Amazonasgebiet', es:'entre los Andes y la Amazonía'},
+];
+function buildMittlung() {
+  const c = document.getElementById('mittlung-quiz');
+  mittData.forEach((item,i) => {
+    const d = document.createElement('div');
+    d.className='quiz-item';
+    d.innerHTML=`<div class="question" style="color:var(--ink-soft);">🇩🇪 ${item.de}</div>
+    <input class="fill-input" placeholder="Auf Spanisch …" id="mi-${i}" autocomplete="off" spellcheck="false" style="margin-top:8px;">
+    <button class="check-btn" onclick="checkMitt(${i})">Prüfen</button>
+    <div class="feedback" id="fb-mi-${i}"></div>`;
+    c.appendChild(d);
+  });
+}
+function checkMitt(i) {
+  const inp=document.getElementById(`mi-${i}`);
+  const fb=document.getElementById(`fb-mi-${i}`);
+  const val=inp.value.trim().toLowerCase().replace(/\s+/g,' ');
+  const key=mittData[i].es.toLowerCase();
+  const sim=val.length>4 && (key.includes(val.substring(0,Math.floor(val.length*0.7))) || val.includes(key.substring(0,8)));
+  if(val===key||sim){inp.className='fill-input correct-input';fb.textContent=`✅ Gut! Musterlösung: ${mittData[i].es}`;fb.className='feedback show ok';}
+  else{inp.className='fill-input wrong-input';fb.textContent=`Musterlösung: ${mittData[i].es}`;fb.className='feedback show fail';}
+}
+
+/* ── KANN-LISTE CHECKLIST ── */
+const kannItems = [
+  'Puedo contar eventos históricos en indefinido (p. ej. «La conquista empezó en 1492»).',
+  'Sé leer y escribir años en español («mil cuatrocientos noventa y dos»).',
+  'Puedo preguntar a alguien qué hizo el fin de semana pasado.',
+  'Sé preguntar dónde estuvo alguien ayer.',
+  'Puedo decir que fui al cine / me acosté tarde / conocí a alguien (indefinido 1.ª pers.).',
+  'Sé usar «nosotros» en indefinido: comimos, fuimos, estuvimos…',
+  'Puedo explicar una palabra que no sé en español (circunloquio).',
+  'Conozco la diferencia entre cuando / como / porque y sé usarlas correctamente.',
+  'Sé conjugar los verbos irregulares más importantes: ser/ir, tener, hacer, ver, estar.',
+  'Puedo mantener una conversación sobre un viaje en español durante 2–3 minutos.',
+];
+function buildChecklist() {
+  const c = document.getElementById('checklist');
+  if(!c) return;
+  kannItems.forEach((item, i) => {
+    const row = document.createElement('label');
+    row.style.cssText='display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;transition:background 0.15s;font-size:0.88rem;color:var(--ink-mid);border:1px solid var(--cream-dark);background:#fff;';
+    row.innerHTML=`<input type="checkbox" id="kl-${i}" onchange="updateCheck()" style="margin-top:3px;width:16px;height:16px;accent-color:var(--teal);flex-shrink:0;"><span>${item}</span>`;
+    row.querySelector('input').addEventListener('change', ()=>{
+      row.style.background = row.querySelector('input').checked ? 'var(--green-light)' : '#fff';
+      row.style.borderColor = row.querySelector('input').checked ? 'var(--green)' : 'var(--cream-dark)';
+    });
+    c.appendChild(row);
+  });
+}
+function updateCheck() {
+  const total = kannItems.length;
+  const checked = document.querySelectorAll('#checklist input:checked').length;
+  const res = document.getElementById('check-result');
+  res.style.display = 'block';
+  const pct = Math.round(checked/total*100);
+  if(pct===100){res.style.background='var(--green-light)';res.style.color='var(--green)';res.textContent=`✅ ¡Perfecto! Dominas todos los contenidos (${checked}/${total}). ¡Estás listo/a para el examen!`;}
+  else if(pct>=70){res.style.background='var(--gold-light)';res.style.color='var(--gold-dark)';res.textContent=`👍 Bien – dominas ${checked} de ${total} puntos (${pct}%). Repasa los que aún no tienes marcados.`;}
+  else{res.style.background='var(--red-light)';res.style.color='var(--red)';res.textContent=`📚 Todavía hay trabajo por hacer: ${checked}/${total} (${pct}%). Vuelve a los apartados de Gramática, Vocabulario y Ejercicios.`;}
+}
+buildChecklist();
+buildMC(); buildTF(); buildKonj(); buildFill(); buildMatch(); buildMittlung();
+updateS1();
+</body>
+</html>
