@@ -100,9 +100,6 @@
   main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
   .section { display: none; }
-  .section:target { display: block; }
-  #grammatik { display: block; }
-  .section:target ~ #grammatik { display: none; }
 
   .level-badge {
     display: inline-flex;
@@ -444,7 +441,7 @@
 <main>
 
 <!-- ═══════════════════════════════════════════════════════ GRAMMATIK -->
-<section class="section active" id="grammatik">
+<section class="section" id="grammatik">
 
   <div class="level-badge level1">📖 Explicaciones gramaticales</div>
   <h2>Gramática: Indefinido &amp; Conjunciones</h2>
@@ -1213,6 +1210,30 @@
 
 <script>
 let s1Correct = 0, s1Total = 0;
+
+const ALL_IDS = ['grammatik','vokabeln','stufe1','stufe2','kannliste','mediacion','guatemala','online','dialogo'];
+
+function showSection(id) {
+  ALL_IDS.forEach(sid => {
+    const el = document.getElementById(sid);
+    if(el) el.style.display = (sid === id) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.style.color = (b.getAttribute('href') === '#' + id) ? 'var(--gold)' : '';
+    b.style.borderBottomColor = (b.getAttribute('href') === '#' + id) ? 'var(--gold)' : 'transparent';
+  });
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const id = this.getAttribute('href').replace('#', '');
+    showSection(id);
+  });
+});
+
+showSection('grammatik');
 
 function toggleSolution() {
   const sol = document.getElementById('solution-text');
